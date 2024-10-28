@@ -333,14 +333,24 @@ function showUserIdForm(amount) {
 }
 
 function submitUserId() {
-    carromUserId = document.getElementById('userIdInput').value; // Carrom User ID সংরক্ষণ
-    if (carromUserId) {
-        document.getElementById('userIdForm').classList.remove('active');
-        document.getElementById('paymentForm').classList.add('active');
-        document.getElementById('amountText').innerText = `আপনার মোট পরিমাণ: ${currentAmount} BDT`;
-    } else {
-        alert("অনুগ্রহ করে একটি ইউজার আইডি লিখুন।");
+        const userId = document.getElementById('userIdInput').value;
+        const division = document.getElementById('divisionInput').value;
+        const district = document.getElementById('districtInput').value;
+        const area = document.getElementById('areaInput').value;
+        const number = document.getElementById('numberInput').value;
+
+        // Submitting data (for demonstration purposes, logging to console)
+        console.log("User ID:", userId);
+        console.log("বিভাগ:", division);
+        console.log("জেলা:", district);
+        console.log("এলাকা:", area);
+        console.log("নাম্বার:", number);
     }
+
+    function goBack(formId) {
+        document.getElementById(formId).style.display = 'none';
+        console.log("Back button clicked");
+        }
 }
 
 function verifyPayment() {
