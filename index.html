@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacking Device Selling</title>
+    <title>Carrom Pool</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-		background: linear-gradient(to right, #20B2AA, #20B2AA), 
-                  linear-gradient(135deg, #001f3f, #004080, #00B894, #FFFFFF);
-            }
+            background: linear-gradient(to right, #20B2AA, #20B2AA);
 
             margin: 0;
             padding: 0;
@@ -31,25 +29,7 @@
             vertical-align: middle;
             margin-left: 5px;
             margin-bottom: 5px;
-	}
-        .login-btn {
-    background-color: #f0ad4e;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    position: absolute;
-    right: 20px;
-    top: 25px;
-}
-
-.login-btn:hover {
-    background-color: #ec971f;
-}
-
-	    
+        }
 
         .product-list {
             display: flex;
@@ -201,11 +181,9 @@
 <body>
 
     <div class="header">
-        <h1>Hacker71</h1>
+        <h1>Carrom Pool</h1>
         <img src="https://i.ibb.co/5FZ6HmM/12559876.png" alt="Verification Logo">
         <div class="subtext">official site</div>
-	    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-	    
     </div>
 
     <div class="product-list">
@@ -274,11 +252,25 @@
         </div>
     </div>
 
-    <div class="container" id="userIdForm">
-        <h2>Carrom User ID লিখুন</h2>
-        <input type="text" placeholder="Carrom User ID দিন" id="userIdInput">
-        <button class="button submit" onclick="submitUserId()">Submit</button>
-        <button class="button back" onclick="goBack('userIdForm')">Back</button> <!-- Back button added -->
+    <div class="form-container" id="form-container">
+        <h2>তথ্য প্রদান করুন</h2>
+        <form id="userForm">
+            <input type="text" id="name" placeholder="নাম" required>
+            <select id="division" required>
+                <option value="">বিভাগ নির্বাচন করুন</option>
+                <option value="Dhaka">ঢাকা</option>
+                <option value="Chattogram">চট্টগ্রাম</option>
+                <option value="Khulna">খুলনা</option>
+                <option value="Sylhet">সিলেট</option>
+                <option value="Barisal">বরিশাল</option>
+                <option value="Rajshahi">রাজশাহী</option>
+                <option value="Mymensingh">ময়মনসিংহ</option>
+                <option value="Rangpur">রংপুর</option>
+            </select>
+            <input type="text" id="district" placeholder="জেলা" required>
+            <input type="tel" id="phone" placeholder="মোবাইল নাম্বার" pattern="[0-9]{11}" required>
+            <button type="submit" class="submit-button">জমা দিন</button>
+        </form>
     </div>
 
     <div class="payment-container" id="paymentForm">
@@ -399,4 +391,4 @@ function goBack(formId) {
     </script>
 
 </body>
-</html>
+			</html>
