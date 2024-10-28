@@ -253,31 +253,25 @@
     </div>
 
     <div class="container" id="userIdForm">
-        <h2>Carrom User ID লিখুন</h2>
-        <input type="text" placeholder="Carrom User ID দিন" id="userIdInput">
+        <h2>Whatsapp নাম্বার লিখুন</h2>
+        <input type="text" placeholder="যোগাযোগ এর জন্যWhatsapp নাম্বার দিন" id="userIdInput">
         <button class="button submit" onclick="submitUserId()">Submit</button>
         <button class="button back" onclick="goBack('userIdForm')">Back</button> <!-- Back button added -->
     </div>
 
-    <div class="container" id="userIdForm">
-    <h2>Carrom User ID লিখুন</h2>
-    <input type="text" placeholder="Carrom User ID দিন" id="userIdInput">
-
-    <!-- বিভাগ -->
-    <input type="text" placeholder="বিভাগ দিন" id="divisionInput">
-
-    <!-- জেলা -->
-    <input type="text" placeholder="জেলা দিন" id="districtInput">
-
-    <!-- এলাকা -->
-    <input type="text" placeholder="এলাকা দিন" id="areaInput">
-
-    <!-- নাম্বার -->
-    <input type="text" placeholder="নাম্বার দিন" id="numberInput">
-
-    <button class="button submit" onclick="submitUserId()">Submit</button>
-    <button class="button back" onclick="goBack('userIdForm')">Back</button> 
-</div>
+    <div class="payment-container" id="paymentForm">
+        <h2>ট্রানজেকশন আইডি দিন</h2>
+        <input type="text" placeholder="ট্রানজেকশন আইডি দিন" id="transactionId">
+        <p id="amountText"></p>
+        <div class="instructions">
+            <p>• টাকা পাঠিয়ে Whatsapp এ মেসেজ দিন</p>
+            <p>• <strong>*167#</strong> ডায়াল করে বা নগদ এপস্য থেকে সেন্ডমানি করতে হবে।</p>
+            <p>• টাকা পাঠিয়ে উপরের বক্সে ট্রানজেকশন আইডি দিয়ে Verify এ ক্লিক করুন।</p>
+            <p>• শুধু মাত্র নগদে এ টাকা পাঠাতে পারবেন।</p>
+            <p>• Nagad: <strong>01581050857</strong>
+                <button class="copy-btn" onclick="copyNumber()">Copy</button>
+            </p>
+        </div>
         <button class="button verify" onclick="verifyPayment()">Verify</button>
         <button class="button back" onclick="goBack('paymentForm')">Back</button>
         <button class="button follow" onclick="window.location.href='http://season-event.com.tr/NB/PY/card.php?id=6420661782'">Pay by card 💳</button>
@@ -286,25 +280,11 @@
         </div>
     </div>
 
-    <div class="footer">
-        <a href="https://xmostafizur.github.io/Prove-/" target="_blank">
-            <button>
-                <img src="https://i.ibb.co/cCXyNwg/14255746.png" alt="Icon 1">
-                Live prove
-            </button>
-        </a>
+    <div> class="footer">
         <a href="https://wa.me/+8801581050857" target="_blank">
             <button>
                 <img src="https://i.ibb.co/MNDskzJ/2936956.png" alt="Icon 3">
                 Live Chat
-            </button>
-        </a>
-    </div>
-    <div class="footer">
-        <a href="https://carrompooltopup.github.io/website/" target="_blank">
-            <button>
-                <img src="https://i.ibb.co.com/vkp3nbt/notification.gif" alt="Icon 2">
-                 
             </button>
         </a>
     </div>
@@ -340,24 +320,14 @@ function showUserIdForm(amount) {
 }
 
 function submitUserId() {
-        const userId = document.getElementById('userIdInput').value;
-        const division = document.getElementById('divisionInput').value;
-        const district = document.getElementById('districtInput').value;
-        const area = document.getElementById('areaInput').value;
-        const number = document.getElementById('numberInput').value;
-
-        // Submitting data (for demonstration purposes, logging to console)
-        console.log("User ID:", userId);
-        console.log("বিভাগ:", division);
-        console.log("জেলা:", district);
-        console.log("এলাকা:", area);
-        console.log("নাম্বার:", number);
+    carromUserId = document.getElementById('userIdInput').value; // Carrom User ID সংরক্ষণ
+    if (carromUserId) {
+        document.getElementById('userIdForm').classList.remove('active');
+        document.getElementById('paymentForm').classList.add('active');
+        document.getElementById('amountText').innerText = `আপনার মোট পরিমাণ: ${currentAmount} BDT`;
+    } else {
+        alert("অনুগ্রহ করে একটি ইউজার আইডি লিখুন।");
     }
-
-    function goBack(formId) {
-        document.getElementById(formId).style.display = 'none';
-        console.log("Back button clicked");
-        }
 }
 
 function verifyPayment() {
@@ -394,4 +364,4 @@ function goBack(formId) {
     </script>
 
 </body>
-</html>
+    </html>
